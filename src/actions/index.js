@@ -19,7 +19,8 @@ export function getHTMLSnippet(){
     const request = axios({
         method: 'get',
         url: url,
-        headers: {'content-type': 'text/html'}
+        headers: {'Content-Type': 'text/html'}
+        
     })
     console.log('Request: ', request)
     return {
