@@ -5,8 +5,11 @@ import {getPublications, getHTMLSnippet} from '../actions/index'
 
 class PubsList extends Component{
     constructor(props){
+        let state = []
         super(props)
+        console.log(props)
         this.onFormSubmit = this.onFormSubmit.bind(this)
+        this.getHTMLForm = this.getHTMLForm.bind(this)
     }
     onFormSubmit(ev){
         ev.preventDefault()
@@ -14,8 +17,10 @@ class PubsList extends Component{
     }
 
     getHTMLForm(ev){
+        console.log(ev)
+        console.log(this.props)
         ev.preventDefault()
-        getHTMLSnippet()
+        let data = getHTMLSnippet()
     }
 
 
@@ -29,6 +34,10 @@ class PubsList extends Component{
             <form onSubmit={this.getHTMLForm}>
             <input type="submit" value="Get html snippet"/>
             </form>
+
+            <div id='data'>
+
+            </div>
         </div>
         );
     }
